@@ -3,8 +3,10 @@ all: simulator
 CC = g++
 
 CFLAGS=\
-#	   -O3\
+	   -O3\
 #   -fsanitize=address\
+
+
 
 SRCS +=\
 	bloom_calc.c\

@@ -26,3 +26,4 @@
 ./simulator --ratio=0.0125 -S 4 -f 0.000026 1>./result/8192_8x.res &
 ./simulator --ratio=0.0125 -S 8 -f 0.000013 1>./result/16384_8x.res &
 ./simulator --ratio=0.0125 -S 16 -f 0.000006 1>./result/32768_8x.res &
+

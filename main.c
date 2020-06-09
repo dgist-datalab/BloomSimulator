@@ -42,6 +42,7 @@ int main(int argc, char*argv[]){
 	uint64_t range=(total_lpa*100/(100+input_OP));
 
 	total_lpa=range/ratio_lpa;
+
 	printf("\ttotal request %lu (ratio:%.2f%% %f)\n", total_lpa, ((float)100/ratio_lpa), ratio_lpa);
 	printf("\trange %lu\n", range);
 	printf("\trequest type : %s\n", get_bench_type(__type));
@@ -84,6 +85,7 @@ int main(int argc, char*argv[]){
 	//srand(0);
 	
 	for(uint64_t i=0; i<range/10; i++){
+
 		uint32_t lpa;
 		switch(__type){
 			case RANDOMBENCH:

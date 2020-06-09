@@ -11,6 +11,7 @@
 #define LBASIZE (4*KiB)
 #define DEFBLOCKPERPAGE (512)
 #define DEFTOTALSIZE (64*GiB)
+
 #define DEFSUPERBLOCKPERBLOCK (4)
 
 #define OP 7

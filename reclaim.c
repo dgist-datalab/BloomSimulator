@@ -6,7 +6,6 @@
 
 extern bloom_ftl ftl;
 extern bloom_arg arg;
-
 bool debug;
 
 typedef struct pair{
@@ -18,7 +17,6 @@ typedef struct pair{
 
 std::vector<uint32_t> *merging_page(sup_block *target,
 		pair *lba_target_array, uint32_t pair_idx, bool isgc, uint32_t *filter_res);
-
 void remove_deque(std::deque<block *> *dq, block *t){
 	std::deque<block *>::iterator it=dq->begin();
 	bool isfound=false;
@@ -236,6 +234,7 @@ uint32_t rebloom(sup_block *target){
 			//	debug=true;
 		}
 		//	printf("cnt:%d\n", cnt);
+
 	}
 	return __rebloom(target);
 }
@@ -247,6 +246,7 @@ uint32_t __gc(sup_block *target){
 	}
 
 #ifdef GCONEBLOCK
+
 	uint32_t max_lba=arg.PPB * arg.LPP;
 	uint32_t pair_idx=0;
 	pair *lba_target_array=(pair*)malloc(sizeof(pair) * max_lba);
@@ -267,6 +267,7 @@ uint32_t __gc(sup_block *target){
 			print_block=tblock;
 		}
 	}
+
 	block *tblock=print_block;
 	for(uint32_t i=0; i<arg.PPB; i++){
 		p_page *page=&tblock->page_array[i];
@@ -330,6 +331,7 @@ uint32_t __gc(sup_block *target){
 		abort();
 	}
 
+
 	if(target->used + new_write_lba->size()/arg.LPP + 
 			(new_write_lba->size()%arg.LPP?1:0) > arg.PPB * arg.BPS){
 		printf("it can't be\n");
@@ -342,6 +344,7 @@ uint32_t __gc(sup_block *target){
 	free(lba_target_array);
 	//if(debug)
 	//	block_print(print_block);
+
 	return 1;
 }
 

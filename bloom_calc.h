@@ -6,6 +6,7 @@
 #include <queue>
 #include <deque>
 #define GCONEBLOCK
+
 enum{
 USER, REBLOOM, GC
 };

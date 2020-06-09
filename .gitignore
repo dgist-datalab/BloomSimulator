@@ -1,2 +1,4 @@
-./result/
+./result/*
 *.res
+*.o
+simulator
